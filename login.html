@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            background-color: whitesmoke;
+            height: 130px;
+            padding-top: 20px;
+            margin: 0 auto;
+            width: 600px;
+            border-radius: 15px;
+        }
+
+        #loginh {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .btn1, .btn2 {
+            background-color: orangered;
+            color: white;
+            height: 60px;
+            width: 120px;
+            padding-top: 10px;
+            border-radius: 10px;
+            padding-left: 10px;
+            box-shadow: 4px 4px 4px rgb(105, 77, 77);
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #l, #r {
+            background-color: aliceblue;
+            height: auto;
+            width: 500px;
+            margin: 30px auto;
+            border-radius: 30px;
+            border: 3px solid black;
+            padding: 20px;
+            display: none;
+        }
+
+        input::placeholder {
+            color: navy;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            height: 40px;
+            width: 90%;
+            border-radius: 10px;
+            margin: 10px 0;
+            padding-left: 10px;
+        }
+
+        .section {
+            margin-left: 20px;
+        }
+    </style>
+    <script>
+        function showLogin() {
+            document.getElementById('l').style.display = 'block';
+            document.getElementById('r').style.display = 'none';
+        }
+        function showRegister() {
+            document.getElementById('l').style.display = 'none';
+            document.getElementById('r').style.display = 'block';
+        }
+    </script>
+</head>
+<body style="background-color: rgb(131, 226, 226);">
+    <div id="box">
+        <div id="loginh">
+            <h1 class="btn1" onclick="showLogin()">Login</h1>
+            <h1 class="btn2" onclick="showRegister()">Register</h1>
+        </div>
+    </div>
+
+    <!-- Login Form -->
+    <div id="l">
+        <p class="section"><input type="text" name="username" placeholder="Username"></p>
+        <p class="section"><input type="password" name="pass" placeholder="Password"></p>
+        <p class="section"><input type="button" value="Login" style="background-color: rgb(9, 29, 96); color: white;width: 130px; height:50px; border-radius: 10px;"></p>
+        <h3 style="color: red; text-align: center;">New Member? <a href="#" onclick="showRegister()" style="text-decoration: none; color: blue;width: 130px; height:50px; border-radius: 10px;"><em>Register Here...</em></a></h3>
+    </div>
+
+    <!-- Registration Form (Newly Added) -->
+    <div id="r">
+        <p class="section"><input type="email" name="email" placeholder="Email"></p>
+        <p class="section"><input type="text" name="username" placeholder="Username"></p>
+        <p class="section"><input type="tel" name="mobile" placeholder="Mobile"></p>
+        <p class="section"><input type="password" name="password" placeholder="Password"></p>
+        <p class="section"><input type="password" name="confirm_password" placeholder="Confirm Password"></p>
+
+        <!-- College Dropdown -->
+        <p class="section">
+            <select name="college">
+                <option value="">Select College</option>
+                <option value="ABC College">ABC College</option>
+                <option value="XYZ Institute">XYZ Institute</option>
+                <option value="LMN University">LMN University</option>
+            </select>
+        </p>
+
+        <!-- Gender Radio Buttons -->
+        <p class="section">
+            Gender:
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female
+            <input type="radio" name="gender" value="Other"> Other
+        </p>
+
+        <!-- Interested Courses Checkboxes -->
+        <p class="section">
+            Interested Courses:<br>
+            <input type="checkbox" name="course" value="HTML"> HTML
+            <input type="checkbox" name="course" value="CSS"> CSS
+            <input type="checkbox" name="course" value="JavaScript"> JavaScript
+            <input type="checkbox" name="course" value="Python"> Python
+        </p>
+
+        <p class="section"><input type="button" value="Register" style="background-color: green; color: white; width: 130px; height:50px; border-radius: 10px;"></p>
+        <h3 style="color: red; text-align: center;">Already Registered? <a href="#" onclick="showLogin()" style="text-decoration: none; color: blue;"><em>Login Here...</em></a></h3>
+    </div>
+
+    <hr><br><br>
+    <p style="text-align: center;">&copy; 2025 | Login | All Rights Reserved</p>
+</body>
+</html>
